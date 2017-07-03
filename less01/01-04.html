@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.js"></script>
+      
+  </head>
+
+<style>
+    
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+    background-color: honeydew;
+
+  /* This centers our sketch horizontally. */
+  justify-content: center;
+
+  /* This centers our sketch vertically. */
+  align-items: center;
+}      
+</style>   
+    
+    
+<body>
+
+
+<script type="text/javascript">
+
+var w;
+
+    
+function setup() {
+    createCanvas(640,360);
+    w = new Walker();
+}
+
+function draw(){
+    background(51);
+    w.walk();
+    w.display();
+ }  // konec draw 
+    
+
+function Walker() {
+    this.pos = createVector(width/2, height/2);
+    
+    this.walk = function() {
+        this.pos.x = this.pos.x + random(-5, 5);
+        this.pos.y = this.pos.y + random(-5, 5);
+    }
+    
+    this.display = function() {
+        fill(255);
+        ellipse(this.pos.x, this.pos.y, 48, 48);
+    }
+}
+
+    
+    
+
+   
+    
+    
+
+
+
+</script>
+  </body>
+</html>
